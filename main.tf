@@ -1,9 +1,15 @@
 provider "aws" {
 }
+variable "foo"{
+
+description="enter the cidr_block"
+
+}
+
 
 resource "aws_vpc" "ted"{
 
-cidr_block= "10.0.0.0/16"
+cidr_block= var.foo
 
 tags= {
  Name:"myvpc"
